@@ -133,7 +133,6 @@ public class TargetBehavior : MonoBehaviour, ITrackableEventHandler
                 // Target in camera. Use the ARCamera's tracking and turn off GyroController's tracking for the CameraProxy.
                 // TODO-3.1.b 
                 tracked = true;
-                LateUpdate();
                 CameraGyro.Paused = true;
                 TrackButton.image.color = Color.green;
                 break;
@@ -142,7 +141,6 @@ public class TargetBehavior : MonoBehaviour, ITrackableEventHandler
                 // Use the ARCamera's tracking and turn off GyroController's tracking for the CameraProxy.
                 // TODO-3.1.b
                 tracked = true;
-                LateUpdate();
                 CameraGyro.Paused = true;
                 TrackButton.image.color = Color.yellow;
                 break;
