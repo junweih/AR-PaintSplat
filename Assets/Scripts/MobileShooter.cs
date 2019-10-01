@@ -12,6 +12,7 @@ public class MobileShooter : MonoBehaviour {
     float swipespeed_min = 1;
     Vector3 mousedown_pos;
     float mousedowned_time;
+    Vector3 swipe_vel;
 
     bool bMouseDown = false;
     float ballSpeedFixed = 25f;
@@ -59,7 +60,7 @@ public class MobileShooter : MonoBehaviour {
 
             Vector3 mouseup_pos = Input.mousePosition;
             Vector3 delta = (mouseup_pos - mousedown_pos) / Screen.height;
-            Vector3 swipe_vel = delta / mousedowned_time;
+            swipe_vel = delta / mousedowned_time;
 
             if (swipe_vel.y > swipespeed_min) {
                 ShootBallUp();
@@ -97,6 +98,6 @@ public class MobileShooter : MonoBehaviour {
     }
 
     public void ShootBallUp() {
-        ShootBall(ballSpeedFixed * targetBehavior.GetPhoneUp());
+        ShootBall(swipe_vel.y * ballSpeedFixed * targetBehavior.GetPhoneUp());
     }
 }

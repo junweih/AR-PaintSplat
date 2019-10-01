@@ -103,7 +103,7 @@ public class TargetBehavior : MonoBehaviour, ITrackableEventHandler
     {
         if (tracked)
         {
-            return -ARCamera.transform.up;
+            return ARCamera.transform.up;
         }
         else
         {
